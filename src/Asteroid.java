@@ -1,7 +1,7 @@
 import java.util.Random;
 /**
  * This class is one of the sub classes of SolarObjects, which is used to create the asteroids. 
- * @author JIAJUNKK
+ * @author JIAJUNKK on 14/10/2023
  */
 public class Asteroid extends SolarObjects{
 	private Random random;

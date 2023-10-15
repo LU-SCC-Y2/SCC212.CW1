@@ -8,7 +8,7 @@ public class SolarSystemPainter extends SolarObjectsList{
 	
 	
 	public SolarSystemPainter(SolarObjectsList SolarObjectsList) {
-		solarSystem = new SolarSystem(1000, 820);
+		solarSystem = new SolarSystem(1400, 900);
 		this.SolarObjectList = SolarObjectsList;
 		
 	}
@@ -34,7 +34,7 @@ public class SolarSystemPainter extends SolarObjectsList{
 		solarSystem.drawSolarObject(s.getDistance(), s.getAngle(), s.getDiameter(), s.getColor());
         s.updatePos();
 	    if (s instanceof Planet) {    
-	    		drawMoons((Planet)s);
+	    	drawMoons((Planet)s);
 	        }
 	    }
 	
@@ -53,5 +53,6 @@ public class SolarSystemPainter extends SolarObjectsList{
 			m.updatePos();
         }
 	}
+
 }
 

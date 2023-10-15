@@ -35,6 +35,19 @@ public class SolarObjects {
 		this.color = color;
 	}
 	
+	
+	public void setDistance(double distance) {
+		this.distance = distance;
+	}
+
+	public void setDiameter(double diameter) {
+		this.diameter = diameter;
+	}
+
+	public void setVelocity(double velocity) {
+		this.velocity = velocity;
+	}
+
 	public double getDistance() {
 		return distance;
 	}

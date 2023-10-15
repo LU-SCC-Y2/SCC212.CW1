@@ -4,7 +4,6 @@
  */
 public class SolarSystemObjectsPopulator {
 	private SolarObjectsList list;
-	
 	public SolarSystemObjectsPopulator(SolarObjectsList list){
 		this.list = list;
 	}
@@ -21,10 +20,10 @@ public class SolarSystemObjectsPopulator {
         Planet venus = new Planet("VENUS", 90, 5, 1.6, "ORANGE");
         Planet earth = new Planet("EARTH", 120, 10.5, 1.4, "BLUE");
         Planet mars = new Planet("MARS", 150, 9, 1.2, "RED");
-        Planet jupiter = new Planet("JUPITER", 220, 40, 0.8, "ORANGE");
-        Planet saturn = new Planet("SATURN", 310, 25.5, 0.6, "ORANGE");
-        Planet uranus = new Planet("URANUS", 350, 20, 0.4, "CYAN");
-        Planet neptune = new Planet("NEPTUNE", 410, 19.8, 0.3, "BLUE");
+        Planet jupiter = new Planet("JUPITER", 350, 40, 0.8, "ORANGE");
+        Planet saturn = new Planet("SATURN", 440, 25.5, 0.6, "ORANGE");
+        Planet uranus = new Planet("URANUS", 480, 20, 0.4, "CYAN");
+        Planet neptune = new Planet("NEPTUNE", 540, 19.8, 0.3, "BLUE");
         this.list.addSolarObjects(sun, mercury, venus, earth, mars, jupiter, saturn, uranus, neptune);
 	}
 	
@@ -40,6 +39,22 @@ public class SolarSystemObjectsPopulator {
 			if (s instanceof Planet) {
 	            checkPlanetName((Planet) s);
 			}
+		}
+	}
+	/**
+	 * This method is used to populate the asteroid belt. 
+	 * @param list is used to add the asteroid into the solarObjectsList
+	 * @param AsteroidNum is used to specify the number of asteroids wanted. There are 700k asteroids in our solar system
+	 * 					  so users can adjust the number of the asteroids in the belt. I have put 500 asteroids in the belt for 
+	 * 					  illustration purpose.
+	 */
+	public void populateAsteroidRing(SolarObjectsList list, int AsteroidNum) {
+		for (int i = 0; i < AsteroidNum; i++) {
+			Asteroid a = new Asteroid(0, 0, 0, "WHITE");	
+			a.setDistance(a.calcSpacing());
+			a.setDiameter(a.calcDiameter());
+			a.setVelocity(a.calcVelocity());
+			list.addSolarObjects(a);
 		}
 	}
 	

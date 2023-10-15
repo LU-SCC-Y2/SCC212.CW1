@@ -6,6 +6,7 @@ public class SolarSystemDriver {
 		
 		populator.populatePlanets(objList);
 		populator.populateMoons(objList);
+		populator.populateAsteroidRing(objList, 500);
 		
 		SolarSystemPainter painter = new SolarSystemPainter(objList);        
 		painter.paintSolarSystem();

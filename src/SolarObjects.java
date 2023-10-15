@@ -1,3 +1,8 @@
+/**
+ * This is the parent class for all SolarObjects, such as Sun, Planets, Moon and Asteroids.
+ * @author JIAJUNKK
+ */
+
 public class SolarObjects {
 	private String name;
 	private double distance;
@@ -6,16 +11,24 @@ public class SolarObjects {
 	private double velocity; 
 	private String color;
 	
-	
-
-	public SolarObjects(double distance, double diameter, double velocity, String color) {
+	/**
+	 * 
+	 * @param name the name of the planet, easier identification in the future if we need to specify what the planet needs to do in 
+	 * and if else statement when looping through the SolarObjectsList. 
+	 * @param distance the distance of the SolarObjects from the Sun
+	 * @param diameter this determines how big the SolarObject is
+	 * @param velocity this determines how fast it goes
+	 * @param color this determines the color of the SolarObjects. 
+	 */
+	public SolarObjects(String name, double distance, double diameter, double velocity, String color) {
+		this.name = name;
 		this.distance = distance;
 		this.diameter = diameter;
 		this.velocity = velocity;
 		this.color = color;
 	}
-	public SolarObjects(String name, double distance, double diameter, double velocity, String color) {
-		this.name = name;
+	
+	public SolarObjects(double distance, double diameter, double velocity, String color) {
 		this.distance = distance;
 		this.diameter = diameter;
 		this.velocity = velocity;

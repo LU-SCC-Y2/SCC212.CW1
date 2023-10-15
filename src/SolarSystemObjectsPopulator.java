@@ -1,4 +1,7 @@
-
+/**
+ * This class is used to populate the planets, moons, and maybe the asteroid belt (if capable :])
+ * @author JIAJUNKK on 13/10/2023
+ */
 public class SolarSystemObjectsPopulator {
 	private SolarObjectsList list;
 	
@@ -6,10 +9,16 @@ public class SolarSystemObjectsPopulator {
 		this.list = list;
 	}
 	
+	/**
+	 * This is used to populate the planets, by setting up the parameters and passing in the 
+	 * SolarObjectss list, see SolarObjectsList class for more information.
+	 * @param list which contains an empty SoblarObjectsList. <br>
+	 * <b>See SolarObjectsList class for parameters of SolarObjects such as Planet and Sun<b>.  
+	 */
 	public void populatePlanets(SolarObjectsList list) {
-        Sun sun = new Sun(0, 100, 0, "YELLOW");
+        Sun sun = new Sun("SUN", 0, 100, 0, "YELLOW");
         Planet mercury = new Planet("MERCURY", 70, 4, 2, "GRAY");
-        Planet venus = new Planet("VENUS", 90, 5, -1.6, "ORANGE");
+        Planet venus = new Planet("VENUS", 90, 5, 1.6, "ORANGE");
         Planet earth = new Planet("EARTH", 120, 10.5, 1.4, "BLUE");
         Planet mars = new Planet("MARS", 150, 9, 1.2, "RED");
         Planet jupiter = new Planet("JUPITER", 220, 40, 0.8, "ORANGE");
@@ -19,6 +28,13 @@ public class SolarSystemObjectsPopulator {
         this.list.addSolarObjects(sun, mercury, venus, earth, mars, jupiter, saturn, uranus, neptune);
 	}
 	
+	/**
+	 * This method populates the moon to their associated planets.
+	 * @param list which contains a list of SolarObjects<br>
+	 * If the SolarObject is an instance of Planet, then it will start checking the name of the planet and 
+	 * add the associated moon(s) <br>
+	 * <b>See checkPlanetName method for more details<b>.
+	 */
 	public void populateMoons(SolarObjectsList list) {
 		for (SolarObjects s: list.getSolarObjectsList()) {
 			if (s instanceof Planet) {
@@ -27,6 +43,11 @@ public class SolarSystemObjectsPopulator {
 		}
 	}
 	
+	/**
+	 * This method checks the name of the planets to add their associated moons to the moonList of 
+	 * each planet. See more <b>details about moonList in the Planet class<b>.
+	 * @param p, where p is the Planet, which is a subclass of SolarObjects.
+	 */
 	private void checkPlanetName(Planet p) {
 		String name = p.getName();
 		switch (name) {

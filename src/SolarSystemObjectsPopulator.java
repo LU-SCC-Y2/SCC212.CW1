@@ -60,7 +60,8 @@ public class SolarSystemObjectsPopulator {
 	
 	/**
 	 * This method checks the name of the planets to add their associated moons to the moonList of 
-	 * each planet. See more <b>details about moonList in the Planet class<b>.
+	 * each planet. Besides, if the planet is Saturn, then it will start populating the ringList.
+	 * See more <b>details about moonList in the Planet class<b>.
 	 * @param p, where p is the Planet, which is a subclass of SolarObjects.
 	 */
 	private void checkPlanetName(Planet p) {

@@ -1,3 +1,8 @@
+/**
+ * This is one of the child classes of the SolarObjects class. But the Planet class has two lists, which are 
+ * moonList and ringList, that are used to store the Moon Objects and the PlanetRing Object
+ * @author JIAJUNKK on 19/10/2023
+ */
 import java.util.ArrayList; 
 
 public class Planet extends SolarObjects {
@@ -20,9 +25,18 @@ public class Planet extends SolarObjects {
 		ringList.add(r);
 	}
 	
+	/**
+	 * This method is used to get the moonList from each planet, then draw them out. See more details in the SolarSystemPainter class. 
+	 * @return moonList
+	 */
 	public ArrayList<Moon> getMoonList() {
 		return moonList;
 	}
+	/**
+	 * This method is used to get the ringList from specific planet, then draw them out. See more details in the SolarSystemPainter class. 
+	 * and SolarSystemObjectsPopulator class. 
+	 * @return ringList
+	 */
 	public ArrayList<PlanetRing> getRingList() {
 		return ringList;
 	}

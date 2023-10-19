@@ -6,10 +6,8 @@ import java.util.*;
 
 /**
  * This class provides a graphical user interface to a model of the solar system
- * @author JoeFinney
+ * @author Joe Finney
  */
- 
-
 public class SolarSystem extends JFrame 
 {
 	private static final long serialVersionUID = 1L;

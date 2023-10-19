@@ -35,8 +35,13 @@ public class SolarSystemPainter extends SolarObjectsList{
         s.updatePos();
 	    if (s instanceof Planet) {    
 	    	drawMoons((Planet)s);
-	        }
+	    	
+	    	if (s.getName().equals("SATURN")){
+	    		drawRing((Planet)s);
+	    	}
 	    }
+	}
+	
 	
 	/**
 	 * This method is used to draw out the moons that are associated to the planets. This drawMoons method takes in the 
@@ -53,6 +58,21 @@ public class SolarSystemPainter extends SolarObjectsList{
 			m.updatePos();
         }
 	}
-
+	
+	/**
+	 * This method is used to draw out the ring of the planet, which is kind of similar to drawing the moon around the planet.
+	 * But adding another method to this is to ensure the extensibility of this program as in the future, ring can be added to 
+	 * uranus by simply calling this method. 
+	 * @param p
+	 */
+	private void drawRing(Planet p) {
+		for (PlanetRing pr : ((Planet) p).getRingList()) {
+			solarSystem.drawSolarObjectAbout(
+					pr.getDistance(), pr.getAngle(), pr.getDiameter(),
+					pr.getColor(), p.getDistance(), p.getAngle()
+			);
+			pr.updatePos();
+		}
+	}
 }
 

@@ -21,7 +21,7 @@ public class SolarSystemObjectsPopulator {
         Planet earth = new Planet("EARTH", 120, 10.5, 1.4, "BLUE");
         Planet mars = new Planet("MARS", 150, 9, 1.2, "RED");
         Planet jupiter = new Planet("JUPITER", 350, 40, 0.8, "ORANGE");
-        Planet saturn = new Planet("SATURN", 440, 25.5, 0.6, "ORANGE");
+        Planet saturn = new Planet("SATURN", 445, 25.5, 0.6, "ORANGE");
         Planet uranus = new Planet("URANUS", 480, 20, 0.4, "CYAN");
         Planet neptune = new Planet("NEPTUNE", 540, 19.8, 0.3, "BLUE");
         this.list.addSolarObjects(sun, mercury, venus, earth, mars, jupiter, saturn, uranus, neptune);
@@ -77,16 +77,27 @@ public class SolarSystemObjectsPopulator {
 			p.addMoon(marsMoon2);
 			break;
 		case "JUPITER":
-			Moon jupiterMoon1 = new Moon(30, 3.25, p.getVelocity()*5, "WHITE");
-			Moon jupiterMoon2 = new Moon(40, 2, p.getVelocity()*4, "WHITE");
-			Moon jupiterMoon3 = new Moon(50, 6.25, p.getVelocity()*3, "WHITE");
-			Moon jupiterMoon4 = new Moon(60, 4.25, p.getVelocity()*2.5, "WHITE");
-
+			Moon jupiterMoon1 = new Moon(30, 3.25, p.getVelocity()*10, "WHITE");
+			Moon jupiterMoon2 = new Moon(40, 2, p.getVelocity()*9, "WHITE");
+			Moon jupiterMoon3 = new Moon(50, 6.25, p.getVelocity()*8, "WHITE");
+			Moon jupiterMoon4 = new Moon(60, 4.25, p.getVelocity()*7.5, "WHITE");
+			
 			p.addMoon(jupiterMoon1);
 			p.addMoon(jupiterMoon2);
 			p.addMoon(jupiterMoon3);
 			p.addMoon(jupiterMoon4);
 			break;
+		
+		case "SATURN":
+			Moon saturnMoon =  new Moon(30, 3.25, p.getVelocity()*5, "WHITE");
+			p.addMoon(saturnMoon);
+			
+			PlanetRing ring = new PlanetRing("SaturnRing", 20, 2, 1, "ORANGE");
+			ring.setRingNUm(400);
+			
+			for (int i = 0; i < ring.getRingNUm(); i++) {
+				p.addRing(ring);
+			}
 		}	
 	}
 	

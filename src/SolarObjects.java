@@ -6,9 +6,9 @@
 public class SolarObjects {
 	private String name;
 	private double distance;
-	private double angle;
+	protected double angle;
 	private double diameter;
-	private double velocity; 
+	protected double velocity; 
 	private String color;
 	
 	/**
@@ -76,6 +76,7 @@ public class SolarObjects {
 	}
 	public void updatePos() {
 		angle += velocity;
+		
 	}
 	
 	

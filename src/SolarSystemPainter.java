@@ -3,14 +3,14 @@
  * @author JIAJUNKK on 13/10/2023
  */
 public class SolarSystemPainter extends SolarObjectsList{
-	private SolarSystem solarSystem; 
+	private AdjustableSolarSystem solarSystem;
 	private SolarObjectsList SolarObjectList;
 	
 	
 	public SolarSystemPainter(SolarObjectsList SolarObjectsList) {
-		solarSystem = new SolarSystem(1400, 900);
-		this.SolarObjectList = SolarObjectsList;
-		
+		solarSystem = new AdjustableSolarSystem(1400, 900);
+	    
+		this.SolarObjectList = SolarObjectsList;		
 	}
 		
 	

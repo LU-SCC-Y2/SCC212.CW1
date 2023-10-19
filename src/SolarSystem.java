@@ -18,6 +18,8 @@ public class SolarSystem extends JFrame
 
 	private ArrayList<SolarObject> things = new ArrayList<SolarObject>();
 
+	
+	
 	/**
 	 * Create a view of the Solar System.
 	 * Once an instance of the SolarSystem class is created,
@@ -49,6 +51,8 @@ public class SolarSystem extends JFrame
 		renderingHints.put(RenderingHints.KEY_STROKE_CONTROL, RenderingHints.VALUE_STROKE_PURE);
 		renderingHints.put(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_LCD_HRGB);
 	}
+	
+
 
 	/**
 	 * A method called by the operating system to draw onto the screen - <p><B>YOU DO NOT (AND SHOULD NOT) NEED TO CALL THIS METHOD.</b></p>
@@ -126,10 +130,11 @@ public class SolarSystem extends JFrame
 		Color colour = this.getColourFromString(col);
 		double centreOfRotationX = ((double) width) / 2.0; 
 		double centreOfRotationY = ((double) height) / 2.0; 
-
 		double rads = Math.toRadians(angle);
 		double x = (int) (centreOfRotationX + distance * Math.sin(rads)) - diameter / 2;
 		double y = (int) (centreOfRotationY + distance * Math.cos(rads)) - diameter / 2;
+		
+		
 
 		synchronized (this)
 		{
@@ -175,13 +180,15 @@ public class SolarSystem extends JFrame
 	public void drawSolarObjectAbout(double distance, double angle, double diameter, String col, double centreOfRotationDistance, double centreOfRotationAngle)
 	{
 		Color colour = this.getColourFromString(col);
+		
+	    
 		double centrerads = Math.toRadians(centreOfRotationAngle);
 		double centreOfRotationX = (((double) width) / 2.0) + centreOfRotationDistance * Math.sin(centrerads); 
 		double centreOfRotationY = (((double) height) / 2.0) + centreOfRotationDistance * Math.cos(centrerads); 
-
 		double rads = Math.toRadians(angle);
 		double x = (int) (centreOfRotationX + distance * Math.sin(rads)) - diameter / 2;
 		double y = (int) (centreOfRotationY + distance * Math.cos(rads)) - diameter / 2;
+		
 
 		synchronized (this)
 		{

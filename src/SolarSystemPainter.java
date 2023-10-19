@@ -69,7 +69,7 @@ public class SolarSystemPainter extends SolarObjectsList{
 		for (PlanetRing pr : ((Planet) p).getRingList()) {
 			solarSystem.drawSolarObjectAbout(
 					pr.getDistance(), pr.getAngle(), pr.getDiameter(),
-					pr.getColor(), p.getDistance(), p.getAngle()
+					pr.getColor(), p.getDistance(), p.getAngle()-0.5
 			);
 			pr.updatePos();
 		}

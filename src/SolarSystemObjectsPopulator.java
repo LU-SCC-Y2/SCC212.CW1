@@ -21,9 +21,9 @@ public class SolarSystemObjectsPopulator {
         Planet earth = new Planet("EARTH", 120, 10.5, 1.4, "BLUE");
         Planet mars = new Planet("MARS", 150, 9, 1.2, "RED");
         Planet jupiter = new Planet("JUPITER", 350, 40, 0.8, "ORANGE");
-        Planet saturn = new Planet("SATURN", 445, 25.5, 0.6, "ORANGE");
+        Planet saturn = new Planet("SATURN", 450, 25.5, 0.6, "#D8AE6D");
         Planet uranus = new Planet("URANUS", 480, 20, 0.4, "CYAN");
-        Planet neptune = new Planet("NEPTUNE", 540, 19.8, 0.3, "BLUE");
+        Planet neptune = new Planet("NEPTUNE", 540, 19.8, 0.3, "#7A7A9B");
         this.list.addSolarObjects(sun, mercury, venus, earth, mars, jupiter, saturn, uranus, neptune);
 	}
 	
@@ -65,7 +65,7 @@ public class SolarSystemObjectsPopulator {
 	 * @param p, where p is the Planet, which is a subclass of SolarObjects.
 	 */
 	private void checkPlanetName(Planet p) {
-		String name = p.getName();
+		String name = p.getName().toUpperCase();
 		switch (name) {
 		case "EARTH":
 			Moon earthMoon = new Moon(10, 2.835 , p.getVelocity()*5, "WHITE");
@@ -90,16 +90,25 @@ public class SolarSystemObjectsPopulator {
 			break;
 		
 		case "SATURN":
-			Moon saturnMoon =  new Moon(30, 3.25, p.getVelocity()*5, "WHITE");
+			Moon saturnMoon =  new Moon(30, 4.25, p.getVelocity()*5, "WHITE");
 			p.addMoon(saturnMoon);
 			
-			PlanetRing ring = new PlanetRing("SaturnRing", 20, 2, 1, "ORANGE");
+			PlanetRing ring = new PlanetRing("SaturnRing", 20, 2, 1, "#FFE1AB");
 			ring.setRingNUm(400);
 			
 			for (int i = 0; i < ring.getRingNUm(); i++) {
 				p.addRing(ring);
 			}
-		}	
+			break;
+		case "URANUS":
+			Moon uranusMoon = new Moon(20, 2.835 , p.getVelocity()*5, "WHITE");
+			p.addMoon(uranusMoon);
+			break;	
+		case "NEPTUNE":
+			Moon neptuneMoon = new Moon(20, 2.835 , p.getVelocity()*5, "WHITE");
+			p.addMoon(neptuneMoon);
+			break;	
+		}			
 	}
 	
 	

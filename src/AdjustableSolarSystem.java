@@ -57,10 +57,10 @@ public class AdjustableSolarSystem extends SolarSystem {
             public void keyPressed(KeyEvent e) {
                 int keyCode = e.getKeyCode();
                 if (keyCode == KeyEvent.VK_LEFT) {
-                	scrollX -= 10;
+                	scrollX += 10;
                 } 
                 else if (keyCode == KeyEvent.VK_RIGHT) {
-                	scrollX += 10;
+                	scrollX -= 10;
                 }
                 else if (keyCode == KeyEvent.VK_UP) {
                 	scrollY -= 10;
